@@ -1,13 +1,24 @@
-import './App.css';
+import "./App.css";
+import Clicker from "../Clicker/Clicker";
+
+// object destructuring: our import is equivalent to these two lines
+// import React from "react";
+// useState = React.useState
+import { useState } from "react";
 
 function App() {
-    return (
-        <div className="App">
-            <p>Hello! My name is Luke.</p>
-            <button>Click me!</button>
-            <p>I've clicked the button 0 times.</p>
-        </div>
-    );
+  // pass down color as a props
+  // Notes: can pass in state and state function as props
+  const [color, setColor] = useState("red");
+
+  return (
+    <>
+      {/* props = {variable} */}
+      <Clicker color={color} setColor={setColor} />
+      <Clicker />
+      <Clicker />
+    </>
+  );
 }
 
 export default App;
